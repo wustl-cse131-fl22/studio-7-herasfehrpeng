@@ -26,9 +26,13 @@ public class Rectangle {
 		else return false;
 	}
 	
-	public boolean isSmaller()
+	public boolean isSmaller(Rectangle r)
 	{
-		if ()
+		if (this.area() > r.area())
+		{
+			return true;
+		}
+		else return false;
 	}
 	
 	public static void main(String[] args)
@@ -47,18 +51,6 @@ public class Rectangle {
 		System.out.println("Square? " + rectangle2.square());
 		System.out.println();
 		
-		if (rectangle1.area() > rectangle2.area())
-		{
-			System.out.println("Rectangle 1 has a larger area than Rectangle 2.");
-		}
-		else if (rectangle1.area() < rectangle2.area())
-		{
-			System.out.println("Rectangle 1 has a smaller area than Rectangle 2.");
-		}
-		else
-		{
-			System.out.println("Rectangle 1 has an equal area to Rectangle 2.");
-		}
-		
+		System.out.println("The area of Rectangle1 is greater than the area of Rectangle2: " + rectangle1.isSmaller(rectangle2));
 	}
 }
